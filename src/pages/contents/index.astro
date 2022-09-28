@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+const contents = await Astro.glob("./**/*.md");
+---
+
+<Layout title="Contents">
+  <h1>Contents</h1>
+  <ul>
+    {
+      contents.map((content) => (
+        <li>
+          <a href={content.url}>
+            {content.frontmatter.title} ({content.frontmatter.publishDate})
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
