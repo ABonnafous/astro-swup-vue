@@ -5,5 +5,6 @@ const { blok } = Astro.props;
 ---
 
 <div {...storyblokEditable(blok)}>
-  <p>Teaser {blok.headline}</p>
+  <h2>{blok.headline}</h2>
+  <p>{blok.content}</p>
 </div>

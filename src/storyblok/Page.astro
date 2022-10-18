@@ -6,9 +6,6 @@ const { blok } = Astro.props;
 ---
 
 <div {...storyblokEditable(blok)}>
-  {
-    blok.body?.map((blok: any) => {
-      return <StoryblokComponent blok={blok} />;
-    })
-  }
+  <h1>{blok.title}</h1>
+  {blok.body?.map((blok: any) => <StoryblokComponent blok={blok} />)}
 </div>

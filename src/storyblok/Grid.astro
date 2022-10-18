@@ -1,1 +1,17 @@
-<p>Grid</p>
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+const { blok } = Astro.props;
+---
+
+<div {...storyblokEditable(blok)} class="my-grid">
+  {blok.columns?.map((blok: any) => <StoryblokComponent blok={blok} />)}
+</div>
+
+<style>
+  .my-grid {
+    display: flex;
+    justify-content: space-evenly;
+  }
+</style>
